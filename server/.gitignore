@@ -1,5 +1,6 @@
 # DB
 backup-dbs/
+migrations/
 media/
 *.sqlite3
 
