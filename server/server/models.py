@@ -1,10 +1,11 @@
 from django.db import models
 from shortuuid.django_fields import ShortUUIDField
 from datetime import datetime, timedelta
+from encrypted_model_fields.fields import EncryptedTextField
 
 class Secret(models.Model):
-    hash = ShortUUIDField(length=16, max_length=16, prefix='secret_', primary_key=True)
-    secret_text = models.TextField()
+    hash = ShortUUIDField(length=16, max_length=23, prefix='secret_', primary_key=True)
+    secret_text = EncryptedTextField()
     created_at = models.DateTimeField(auto_now_add=True)
     expires_in = models.IntegerField(default=0)
     remaining_views = models.IntegerField()
