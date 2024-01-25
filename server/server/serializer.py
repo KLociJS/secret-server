@@ -8,7 +8,7 @@ def is_remaining_views_valid(value):
         )
     
 class SecretSerializer(serializers.ModelSerializer):
-    remaining_views = serializers.IntegerField(
+    remainingViews = serializers.IntegerField(
         validators=[is_remaining_views_valid]
     )
     class Meta:
