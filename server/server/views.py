@@ -39,7 +39,7 @@ def post_secret(request):
 
         # Return 405 if the serializer is not valid.
         return Response(
-            {'error': 'Invalid input'},
+            {'detail': 'Invalid input'},
             status=status.HTTP_405_METHOD_NOT_ALLOWED
         )
 
@@ -73,6 +73,6 @@ def get_secret(request, hash):
 
         # Return 404 if the secret is expired or has no remaining views.
         return Response(
-            {'error': 'Secret not available'},
+            {'detail': 'Secret not found'},
             status=status.HTTP_404_NOT_FOUND
         )
