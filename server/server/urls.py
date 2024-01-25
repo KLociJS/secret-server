@@ -21,6 +21,5 @@ from server import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('secret/', views.post_secret),
-    path('secret/list/', views.get_secret_list),
     path('secret/<str:hash>/', views.get_secret),
 ]
